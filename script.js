@@ -1,21 +1,16 @@
-// var artist = "Will Smith"
+var artist = prompt("search for artist here")
 
-// var newDiv = $("<div>")
 
-// function test(){
-//     newDiv.text("yo");
-//     $(this).append(newDiv);
-// }
+if (artist != null){
+var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(response) {
+    console.log(response)
+})
+}
 
-// test();
-
-// // var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=";
-// //     $.ajax({
-// //       url: queryURL,
-// //       method: "GET"
-// //     }).then(function(response) {
-// //         console.log(response);
-// //     })
 window.onload = function() {
     if (window.jQuery) {  
         // jQuery is loaded  
