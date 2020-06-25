@@ -4,7 +4,7 @@ var bandsTableContainer = $("<div>").attr("class", "bandsTableContainer");
 
 var mainDeezerContainer = $("#mainDeezerContainer");
 var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
-
+start();
 $("button").on("click", function (e) {
     var artist = $("#searchInput").val();
     console.log(artist);
@@ -27,6 +27,17 @@ $("button").on("click", function (e) {
         console.log(response)
     })
 });
+function start() {
+
+
+    $.ajax({
+        url: "https://cors-anywhere.herokuapp.com/api.deezer.com/oembed?url=http://www.deezer.com/track/3135556",
+        method: "GET"
+    }).then(function (response) {
+        $("#player").html(response.html);
+        console.log(response.html)
+    })
+}
 
 
 
