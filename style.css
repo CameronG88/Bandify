@@ -5,3 +5,11 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+header {
+background-color:transparent;
+height: 25px;
+border-color: turquoise;
+border-bottom-style: solid;
+border-width: 2px;
+}
