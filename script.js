@@ -1,5 +1,10 @@
 var artist = prompt("search for artist here")
 
+var mainBandsContainer = $("#mainBandsContainer");
+var bandsTableContainer = $("<div>").attr("class", "bandsTableContainer");
+
+var mainDeezerContainer = $("#mainDeezerContainer");
+var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
 
 if (artist != null) {
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
