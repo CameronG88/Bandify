@@ -11,23 +11,13 @@ if (artist != null) {
     })
 }
 
-
-if (artist != null) {
-    var queryURL = "https://itunes.apple.com/search?term=" + artist + "&country=us&media=music&";
+if (artist != null){
+    var queryURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search?q=" + artist + "&secret=575cd86916cf1a434b588d36676b3ef8";
+   console.log(queryURL);
     $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(JSON.parse(response))
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+        console.log(response)
     })
-}
-
-window.onload = function () {
-    if (window.jQuery) {
-        // jQuery is loaded  
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
     }
-}
