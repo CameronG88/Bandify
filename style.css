@@ -1,0 +1,7 @@
+body {
+    background: url(https://image.freepik.com/free-vector/dark-wavy-background-gradient_23-2148385755.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
