@@ -54,7 +54,6 @@ select {
 #searchInput {
     border: solid 1px black;
 }
-
 .scroll {
     background-color: rgb(224, 20, 88);
     width: 25%;
@@ -69,6 +68,14 @@ select {
   #songsList{
 
   }
+#bandslist {
+    background-color: white;
+}
+
+.bandscontainer {
+    width: 25%;
+    float: right;
+}
 
 
 
