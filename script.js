@@ -25,6 +25,12 @@ $("#searchBtn").on("click", function (e) {
         url: deezerURL,
         method: "GET"
     }).then(function (response) {
+        for (let index = 0; index < response.data.length; index++) {
+            console.log(response.data[index].title);
+            var newLi = $("<li>").text(response.data[index].title);
+            $("#songsList").append(newLi);
+        
+        }
         console.log(response)
     })
 });
