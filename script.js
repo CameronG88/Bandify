@@ -18,7 +18,9 @@ $("#searchBtn").on("click", function (e) {
     }).then(function (response) {
         var newImg = $("<img>")
         newImg.attr("src", response.image_url)
-        $("#bandsDiv").append(newImg)
+        newImg.css({"width":"200","height":"200"})
+
+        $("#bandslist").append(newImg)
         console.log(response)
     })
 
@@ -29,7 +31,6 @@ $("#searchBtn").on("click", function (e) {
         method: "GET"
     }).then(function (response) {
         for (let index = 0; index < response.data.length; index++) {
-            console.log(response.data[index].title);
             var newLi = $("<li>").text(response.data[index].title);
             newLi.addClass("songId");
             newLi.data("songId", response.data[index].id)
