@@ -55,5 +55,14 @@ select {
     border: solid 1px black;
 }
 
+#bandslist {
+    background-color: white;
+}
+
+.bandscontainer {
+    width: 25%;
+    float: right;
+}
+
 
 
