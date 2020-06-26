@@ -70,17 +70,19 @@ select {
     overflow-y: auto;
     text-align: center;
     padding: 20px;
-    margin-left: 150px;
-}
 
 #bandslist {
     background-color: white;
+    float: right;
 }
 
 .bandscontainer {
     width: 25%;
     float: right;
 }
-
+ 
+.containerEdge{
+    border-radius: 10px;
+}
 
 
