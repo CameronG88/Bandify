@@ -54,7 +54,20 @@ select {
 #searchInput {
     border: solid 1px black;
 }
+.scroll {
+    background-color: rgb(224, 20, 88);
+    width: 25%;
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+    margin-left: 150px;
+  }
 
+  #songsList{
+
+  }
 #bandslist {
     background-color: white;
 }
