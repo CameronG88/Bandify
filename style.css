@@ -6,10 +6,23 @@ body {
     background-size: cover;
 }
 
-header {
+/* header {
 background-color:transparent;
 height: 25px;
 border-color: turquoise;
 border-bottom-style: solid;
 border-width: 2px;
+} */
+
+#bandify {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: white;
+    font-size: 180px;
+    display: inline-block;
+    text-align: center;
 }
+
+header {
+    text-align: center;
+}
+
