@@ -36,5 +36,6 @@ footer {
     .footerlinks{
 color: rgb(224, 20, 88);
     }
-    
-
+    .search{
+        margin-top: 25px;
+    }
