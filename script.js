@@ -5,7 +5,9 @@ var bandsTableContainer = $("<div>").attr("class", "bandsTableContainer");
 var mainDeezerContainer = $("#mainDeezerContainer");
 var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
 // start();
-$("button").on("click", function (e) {
+$("#searchBtn").on("click", function (e) {
+    event.preventDefault();
+    
     var artist = $("#searchInput").val();
     console.log(artist);
 

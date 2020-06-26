@@ -24,9 +24,31 @@
     <header>
         <h1 id="bandify">BANDIFY</h1>
     </header>
+    <div class="grid-container">
 
+        <div class="grid-x">
+            <div class="grid-cell small-1"></div>
+            <div class="grid-cell small-2">
+                <label>Select Menu
+                    <select>
+                        <option value="artist">Artist</option>
+                        <option value="album">Album</option>
+                    </select>
+                </label>
+            </div>
+            <div class="grid-cell small-8 input-group search">
+
+                <input id="searchInput" type="search" placeholder="search for artist or album"
+                    aria-describedby="exampleHelpText">
+                <div class="input-group-button">
+
+                    <input id="searchBtn" type="submit" class="button" value="Submit">
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="columns shrink footer text-center">
-        <p>Github Links</p>
+        <p>GithubLinks</p>
         <ul class="menu align-center">
             <li><a class="footerlinks" href="https://github.com/CameronG88" target="_blank">Cameron</li>
             <li><a class="footerlinks" href="https://github.com/Cholmes1994" target="_blank">Chris</li>
