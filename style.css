@@ -15,6 +15,13 @@ body {
     margin-top: -45px;
 }
 
+@media only screen and (max-width: 767px) {
+    .responsive { 
+    font-size: 90px !important;
+    margin-top: 0px !important;
+    }
+}
+
 header {
     text-align: center;
 }
@@ -63,7 +70,6 @@ select {
     overflow-y: auto;
     text-align: center;
     padding: 20px;
-  }
 
 #bandslist {
     background-color: white;
