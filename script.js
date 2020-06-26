@@ -34,7 +34,6 @@ $("#searchBtn").on("click", function (e) {
             newLi.addClass("songId");
             newLi.data("songId", response.data[index].id)
 
-
             $("#songsList").prepend(newLi);
 
         }
