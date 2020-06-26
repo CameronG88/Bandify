@@ -7,10 +7,9 @@ var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
 // start();
 $("#searchBtn").on("click", function (e) {
     event.preventDefault();
-    
+
     var artist = $("#searchInput").val();
     console.log(artist);
-
 
     var queryURL = "https://cors-anywhere.herokuapp.com/rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
     $.ajax({
@@ -30,7 +29,6 @@ $("#searchBtn").on("click", function (e) {
     })
 });
 function start() {
-
 
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/api.deezer.com/oembed?url=http://www.deezer.com/track/3135556",
