@@ -29,7 +29,7 @@ $("#searchBtn").on("click", function (e) {
             console.log(response.data[index].title);
             var newLi = $("<li>").text(response.data[index].title);
             $("#songsList").append(newLi);
-        
+
         }
         console.log(response)
     })
