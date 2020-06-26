@@ -16,6 +16,9 @@ $("#searchBtn").on("click", function (e) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+        var newImg = $("<img>")
+        newImg.attr("src", response.image_url)
+        $("#bandsDiv").append(newImg)
         console.log(response)
     })
 
@@ -28,24 +31,25 @@ $("#searchBtn").on("click", function (e) {
         for (let index = 0; index < response.data.length; index++) {
             console.log(response.data[index].title);
             var newLi = $("<li>").text(response.data[index].title);
-         
+            newLi.addClass("songId");
+            newLi.data("songId", response.data[index].id)
+
+
             $("#songsList").prepend(newLi);
-        
+
         }
         console.log(response)
     })
 });
-function start() {
 
+$(document).on("click", ".songId", function (e) {
+    var id = $(this).data("songId");
+    console.log(id);
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/api.deezer.com/oembed?url=http://www.deezer.com/track/3135556",
+        url: "https://cors-anywhere.herokuapp.com/api.deezer.com/oembed?url=http://www.deezer.com/track/" + id,
         method: "GET"
     }).then(function (response) {
         $("#player").html(response.html);
         console.log(response.html)
     })
-}
-
-
-
-
+})
