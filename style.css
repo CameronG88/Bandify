@@ -76,7 +76,7 @@ select:focus {
     padding: 20px;
 }
 
-#bandslist {
+#bandsList {
     float: right;
     background-color: rgba(255, 0, 255, 0.5);
     color: whitesmoke;

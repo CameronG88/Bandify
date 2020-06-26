@@ -7,6 +7,8 @@ var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
 // start();
 $("#searchBtn").on("click", function (e) {
     event.preventDefault();
+    $("#songsList").empty();
+    $("#bandsList").empty();
 
     var artist = $("#searchInput").val();
     console.log(artist);
@@ -20,7 +22,7 @@ $("#searchBtn").on("click", function (e) {
         newImg.attr("src", response.image_url)
         newImg.css({"width":"200","height":"200", "border-radius": "10px 0 0 10px"})
 
-        $("#bandslist").append(newImg)
+        $("#bandsList").append(newImg)
         console.log(response)
     })
 
