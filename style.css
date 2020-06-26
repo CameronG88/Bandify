@@ -33,7 +33,7 @@ footer {
     font-family: 'Montserrat Subrayada';
 }
 
-.footerlinks{
+.footerlinks {
     color: rgb(224, 20, 88);
 }
 
@@ -54,6 +54,7 @@ select {
 #searchInput {
     border: solid 1px black;
 }
+
 .scroll {
     background-color: rgb(224, 20, 88);
     width: 25%;
@@ -65,9 +66,6 @@ select {
     margin-left: 150px;
   }
 
-  #songsList{
-
-  }
 #bandslist {
     background-color: white;
 }
