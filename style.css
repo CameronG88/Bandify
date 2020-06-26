@@ -70,6 +70,7 @@ select {
     overflow-y: auto;
     text-align: center;
     padding: 20px;
+}
 
 #bandslist {
     background-color: white;
