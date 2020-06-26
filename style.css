@@ -41,12 +41,19 @@ select {
     border-radius: 10px 0 0 10px;
     background-color: rgb(224, 20, 88);
     color: white;
+    border: solid 1px black;
 }
 
 #searchBtn {
     border-radius: 0 10px 10px 0;
     height: 39px;
     background-color: rgb(224, 20, 88);
-    border: solid 1px white;
+    border: solid 1px black;
 }
+
+#searchInput {
+    border: solid 1px black;
+}
+
+
 
