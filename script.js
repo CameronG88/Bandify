@@ -28,8 +28,9 @@ $("#searchBtn").on("click", function (e) {
         for (let index = 0; index < response.data.length; index++) {
             console.log(response.data[index].title);
             var newLi = $("<li>").text(response.data[index].title);
-            $("#songsList").append(newLi);
-
+         
+            $("#songsList").prepend(newLi);
+        
         }
         console.log(response)
     })
