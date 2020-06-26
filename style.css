@@ -77,8 +77,9 @@ select:focus {
 }
 
 #bandslist {
-    background-color: white;
     float: right;
+    background-color: rgba(255, 0, 255, 0.5);
+    color: whitesmoke;
 }
 
 .bandscontainer {
@@ -86,10 +87,11 @@ select:focus {
     float: right;
 }
  
-.containerEdge{
+.containerEdge {
     border-radius: 10px;
 }
- #songsList{
-     color: whitesmoke;
- }
+
+#songsList {
+    color: whitesmoke;
+}
 
