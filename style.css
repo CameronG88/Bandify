@@ -95,3 +95,7 @@ select:focus {
     color: whitesmoke;
 }
 
+#player{
+    height: 100%;
+}
+

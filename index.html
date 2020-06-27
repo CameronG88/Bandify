@@ -16,20 +16,22 @@
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Montserrat:wght@600&display=swap"
         rel="stylesheet">
-
+    <!-- CSS Link-->
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <!-- Header-->
     <header>
         <h1 id="bandify" class="responsive">BANDIFY</h1>
     </header>
     <div class="grid-container">
-
+        <!-- Container that holds whole search bar-->
         <div class="grid-x" id="round">
             <div class="grid-cell small-1"></div>
             <div class="grid-cell small-2">
                 <label>
+                    <!-- Dropdown value selector-->
                     <select>
                         <option value="artist">Artist</option>
                         <option value="album">Album</option>
@@ -37,11 +39,11 @@
                 </label>
             </div>
             <div class="grid-cell small-8 input-group search">
-
+                <!-- Search Input-->
                 <input id="searchInput" type="search" placeholder="Search for Artist or Album"
                     aria-describedby="exampleHelpText">
                 <div class="input-group-button">
-
+                    <!-- Search Button-->
                     <input id="searchBtn" type="submit" class="button" value="Search">
                 </div>
             </div>
@@ -50,19 +52,23 @@
     <div class="grid-container">
         <div class="grid-x">
             <div class="grid-y small-1"></div>
+            <!-- Container that holds the artist's tracklist-->
             <div class=" containerEdge grid-y small-3 scroll">
+                <!-- List that JS dynamically populates-->
                 <ul id="songsList">
 
                 </ul>
             </div>
-            <div class="grid-y small-1">
-
-            </div>
-
+            <div class="grid-y small-1"></div>
+            <!-- Container that holds artist picture and info -->
             <div id="bandsList" class=" containerEdge grid-y small-6 bandscontainer"></div>
         </div>
     </div>
-    <div id="player"></div>
+    <div>
+        <!-- Container that holds the music player -->
+        <div id="player"></div>
+    </div>
+    <!-- Footer with team member Github links-->
     <footer class="columns shrink footer text-center">
         <p>GithubLinks</p>
         <ul class="menu align-center">
