@@ -99,6 +99,9 @@ select:focus {
     margin-bottom: -78px;
     position: fixed;
     bottom: 0;
+    margin-left: 275px;
+    
+    
 }
 
 #player{
