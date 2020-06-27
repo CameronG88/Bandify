@@ -95,6 +95,15 @@ select:focus {
     color: whitesmoke;
 }
 
+#parentPlayer{
+    margin-bottom: -78px;
+    position: fixed;
+    bottom: 0;
+    margin-left: 275px;
+    
+    
+}
+
 #player{
     height: 100%;
 }
