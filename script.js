@@ -20,7 +20,7 @@ $("#searchBtn").on("click", function (e) {
     }).then(function (response) {
         var newImg = $("<img>")
         newImg.attr("src", response.image_url)
-        newImg.css({"width":"200","height":"200", "border-radius": "10px 0 0 10px"})
+        newImg.css({ "width": "200", "height": "200", "border-radius": "10px 0 0 10px" })
 
         $("#bandsList").append(newImg)
         console.log(response)

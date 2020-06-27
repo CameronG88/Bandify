@@ -95,16 +95,17 @@ select:focus {
     color: whitesmoke;
 }
 
-#parentPlayer{
-    margin-bottom: -78px;
-    position: fixed;
-    bottom: 0;
-    margin-left: 275px;
-    
-    
+a:hover {
+    color: whitesmoke !important;
 }
 
-#player{
+#parentPlayer {
+    margin-bottom: -75px;
+    position: fixed;
+    bottom: 0;
+}
+
+#player {
     height: 100%;
 }
 
