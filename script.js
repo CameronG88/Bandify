@@ -4,7 +4,7 @@ var bandsTableContainer = $("<div>").attr("class", "bandsTableContainer");
 
 var mainDeezerContainer = $("#mainDeezerContainer");
 var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
-// start();
+start();
 $("#searchBtn").on("click", function (e) {
     event.preventDefault();
     $("#songsList").empty();
@@ -55,3 +55,7 @@ $(document).on("click", ".songId", function (e) {
         console.log(response.html)
     })
 })
+
+function start() {
+    $("#pointer").focus();
+}
