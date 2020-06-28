@@ -26,6 +26,7 @@
         <h1 id="bandify" class="responsive">BANDIFY</h1>
     </header>
     <div class="grid-container">
+        
         <!-- Container that holds whole search bar-->
         <div class="grid-x" id="round">
             <div class="grid-cell small-1"></div>
@@ -48,24 +49,25 @@
                 </div>
             </div>
         </div>
+        <div id="titleDiv" class="grid-x align-center"></div>
     </div>
     <!--Container that holds both content containers-->
     <div class="grid-container">
         <div class="grid-x">
             <div class="grid-y small-1"></div>
+
             <!-- Container that holds the artist's tracklist-->
+
             <div class=" containerEdge grid-y small-3 scroll" id="pointer">
                 <!-- List that JS dynamically populates-->
-                <a id="songsList">
-                    <h5 class="margintop">Top 25</h5>
-                </a>
+                <ul id="songsList">
+
+                </ul>
             </div>
             <!-- Creates space between container-->
             <div class="grid-y small-1"></div>
             <!-- Container that holds artist picture and info -->
-            <a id="bandsList" class=" containerEdge grid-y small-6 bandscontainer">
-                <h5>Band Information</h5>
-            </a>
+            <div id="bandsList" class=" containerEdge grid-y small-6 bandscontainer"></div>
         </div>
     </div>
     <!-- Container that holds the music player -->

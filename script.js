@@ -10,6 +10,7 @@ $("#searchBtn").on("click", function (e) {
     event.preventDefault();
     $("#songsList").empty();
     $("#bandsList").empty();
+    $("#titleDiv").empty();
 
     var artist = $("#searchInput").val();
     console.log(artist);
@@ -19,12 +20,30 @@ $("#searchBtn").on("click", function (e) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        var newImg = $("<img>")
-        newImg.attr("src", response.image_url)
-        newImg.css({ "width": "200", "height": "200", "border-radius": "10px 0 0 10px" })
-        // Appends image of artist searched to BandsInTown container
-        $("#bandsList").append(newImg)
-        console.log(response)
+        // set function variables
+        var newImg = $("<img>");
+        var newTitle = $("<h1>");
+        var eventText = $("<p>");
+        var linkText = $("<a>");
+        // Creates and appends image of artist searched to BandsInTown container
+        newImg.attr("src", response.image_url);
+        newImg.css({ "width": "200", "height": "200", "border-radius": "10px 0 0 10px", "float": "left" });
+        $("#bandsList").prepend(newImg);
+        // creates and appends artist Title
+        newTitle.text(response.name);
+        newTitle.addClass("artTitle");
+        $("#titleDiv").append(newTitle);
+        // creates and appends amount of artist upcoming events
+        if (response.upcoming_event_count != null){
+        eventText.text("Number of upcoming events: " + response.upcoming_event_count);
+        $("#bandsList").append(eventText)
+        linkText.text("Click here for event info");
+        linkText.attr("href", response.url);
+        $("#bandsList").append(linkText);
+        } else {
+            eventText.text("No upcoming events scheduled")
+        }
+        console.log(response);
     })
     // Call to Deezer API to display artists top 25 songs in Deezer container
     var deezerURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search?q=" + artist + "&secret=575cd86916cf1a434b588d36676b3ef8";
