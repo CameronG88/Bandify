@@ -1,3 +1,4 @@
+/* Background image styling */
 body {
     background: url(https://image.freepik.com/free-vector/dark-wavy-background-gradient_23-2148385755.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -5,7 +6,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-
+/* Title */
 #bandify {
     font-family: 'Montserrat Subrayada', sans-serif;
     color: white;
@@ -14,18 +15,18 @@ body {
     text-align: center;
     margin-top: -45px;
 }
-
+/* Makes page responsive */
 @media only screen and (max-width: 767px) {
     .responsive { 
     font-size: 90px !important;
     margin-top: 0px !important;
     }
 }
-
+/* Aligns title to center of page */
 header {
     text-align: center;
 }
-
+/* Fixes footer to bottom of page, added borders and font style */
 footer {
     background-color: black;
     position:fixed; 
@@ -39,33 +40,33 @@ footer {
     border-bottom-style: solid;
     font-family: 'Montserrat Subrayada';
 }
-
+/* Github links text color */
 .footerlinks {
     color: rgb(224, 20, 88);
 }
-
+/* Styling for artist/album drop down menu*/
 select {
     border-radius: 10px 0 0 10px;
     background-color: rgb(224, 20, 88);
     color: white;
     border: solid 1px black;
 }
-
+/* Adds pseudoclass to keep color of drop down menu the same when clicked */
 select:focus {
     background-color: rgb(224, 20, 88);
 }
-
+/* Search button styling */
 #searchBtn {
     border-radius: 0 10px 10px 0;
     height: 39px;
     background-color: rgb(224, 20, 88);
     border: solid 1px black;
 }
-
+/* Border around search input text box */
 #searchInput {
     border: solid 1px black;
 }
-
+/* Adds style to Deezer song list container */
 .scroll {
     background-color: rgba(7, 7, 146, 0.5);
     width: 25%;
@@ -75,22 +76,22 @@ select:focus {
     text-align: center;
     padding: 20px;
 }
-
+/* Adds style to BandsInTown container */
 #bandsList {
     float: right;
     background-color: rgba(255, 0, 255, 0.5);
     color: whitesmoke;
 }
-
+ 
 .bandscontainer {
     width: 25%;
     float: right;
 }
- 
+ /* Adds rounded border around all containers */
 .containerEdge {
     border-radius: 10px;
 }
-
+/* Adds style to Deezer container */
 #songsList {
     color: whitesmoke;
 }
@@ -98,7 +99,7 @@ select:focus {
 a:hover {
     color: whitesmoke !important;
 }
-
+/* Fixes Deezer player to bottom of page */
 #parentPlayer {
     margin-bottom: -75px;
     position: fixed;
@@ -108,7 +109,7 @@ a:hover {
 #player {
     height: 100%;
 }
-
+/* Gives style to Deezer container */
 .songId {
     border-bottom-style: solid;
     border-width: 1px;
@@ -116,11 +117,11 @@ a:hover {
     list-style-type: none;
     margin-bottom: 2px;
 }
-
+/* Aligns container text to center of container */
 h5 {
     text-align: center;
 }
-
+/* Pulls Deezer container text to top of container */
 .margintop {
     margin-top: -19px;
 }
