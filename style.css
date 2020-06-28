@@ -125,3 +125,12 @@ h5 {
 .margintop {
     margin-top: -19px;
 }
+
+.artTitle {
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+#titleDiv {
+    text-align: center;
+}
