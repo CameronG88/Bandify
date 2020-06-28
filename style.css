@@ -131,6 +131,16 @@ h5 {
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
+
 #titleDiv {
     text-align: center;
+}
+/* Put BandsInTown text in center */
+.text-right {
+    text-align: center;
+    margin-top: 25px;
+}
+/* Centers BandsInTown picture */
+.centerpic {
+    margin: auto;
 }
