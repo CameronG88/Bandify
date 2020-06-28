@@ -73,6 +73,7 @@ $("#searchBtn").on("click", function (e) {
             }
             console.log(response)
         });
+        // begin search by album functions
     } else {
         var deezerURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search/album?q=" + search + "&secret=575cd86916cf1a434b588d36676b3ef8";
         console.log(deezerURL);
