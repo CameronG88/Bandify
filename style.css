@@ -116,3 +116,11 @@ a:hover {
     list-style-type: none;
     margin-bottom: 2px;
 }
+
+h5 {
+    text-align: center;
+}
+
+.margintop {
+    margin-top: -19px;
+}
