@@ -44,7 +44,10 @@ $("#searchBtn").on("click", function (e) {
                 eventText.addClass("text-right")
                 $("#bandsList").append(eventText)
                 linkText.text("Click here for event info");
-                linkText.attr("href", response.url);
+                linkText.attr({
+                    href: response.url,
+                    target: "_blank"
+                });
                 linkText.addClass("text-right")
                 $("#bandsList").append(linkText);
             } else {
@@ -53,7 +56,10 @@ $("#searchBtn").on("click", function (e) {
             if (response.facebook_page_url != null) {
                 socialLink.text(response.name + " Facebook");
                 socialLink.addClass("text-right");
-                socialLink.attr("href", response.facebook_page_url);
+                socialLink.attr({
+                    href: response.facebook_page_url,
+                    target: "_blank"
+                });
                 $("#bandsList").append(socialLink);
 
 
@@ -117,7 +123,8 @@ $("#searchBtn").on("click", function (e) {
                         albumeventText.addClass("text-right")
                         $("#bandsList").append(albumeventText)
                         albumlinkText.text("Click here for event info");
-                        albumlinkText.attr("href", response.url);
+                        albumlinkText.attr({ href: response.url,
+                            target: "_blank"});
                         albumlinkText.addClass("text-right")
                         $("#bandsList").append(albumlinkText);
                     } else {
@@ -126,10 +133,11 @@ $("#searchBtn").on("click", function (e) {
                     if (response.facebook_page_url != null) {
                         albumsocialLink.text(response.name + " Facebook");
                         albumsocialLink.addClass("text-right");
-                        albumsocialLink.attr("href", response.facebook_page_url);
+                        albumsocialLink.attr({href: response.facebook_page_url,
+                            target: "_blank"});
                         $("#bandsList").append(albumsocialLink);
-        
-        
+
+
                     }
 
 
