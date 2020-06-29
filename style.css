@@ -90,6 +90,7 @@ select:focus {
  /* Adds rounded border around all containers */
 .containerEdge {
     border-radius: 10px;
+    height: 364px;
 }
 /* Adds style to Deezer container */
 #songsList {
