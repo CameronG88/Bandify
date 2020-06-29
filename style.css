@@ -91,6 +91,7 @@ select:focus {
 .containerEdge {
     border-radius: 10px;
     height: 364px;
+    margin-bottom: 18%;
 }
 /* Adds style to Deezer container */
 #songsList {
@@ -105,6 +106,7 @@ a:hover {
     margin-bottom: -75px;
     position: fixed;
     bottom: 0;
+
 }
 
 #player {
@@ -148,3 +150,4 @@ h5 {
 .centerpic {
     margin: auto;
 }
+
