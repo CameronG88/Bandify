@@ -13,7 +13,13 @@ Link to Bandify:
 Description:
 
 
-    Bandify is an app that allows you to stream music from your favorite artists while simultaneously giving you quick access to artist information. Using the dropdown menu, you can select whether you want to search by artist or album. Whichever criteria you search by, the appropriate response will populate the page.
+    Bandify is an app that allows you to stream music from your favorite artists while 
+    
+    simultaneously giving you quick access to artist information. Using the dropdown menu, you can 
+    
+    select whether you want to search by artist or album. Whichever criteria you search by, the 
+    
+    appropriate response will populate the page.
 
 Criteria
 
