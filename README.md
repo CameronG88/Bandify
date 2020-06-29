@@ -8,7 +8,7 @@ Introduction:
 Link to Bandify:
 
 
-    (Link here)
+   https://camerong88.github.io/Bandify/
 
 Description:
 
