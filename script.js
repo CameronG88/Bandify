@@ -4,6 +4,7 @@ var bandsTableContainer = $("<div>").attr("class", "bandsTableContainer");
 // Container for Deezer
 var mainDeezerContainer = $("#mainDeezerContainer");
 var deezerTableContainer = $("<div>").attr("class", "deezerTableContainer");
+var searchField = $("#searchInput");
 start();
 // Gives life to search button
 $("#searchBtn").on("click", function (e) {
@@ -173,3 +174,14 @@ function start() {
         console.log("bye")
     }
 }
+// Execute a function when the user releases a key on the keyboard
+$(document).on("keyup", "#searchInput", function(event) {
+
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+   $("#searchBtn").click();
+  }
+});
