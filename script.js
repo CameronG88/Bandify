@@ -8,6 +8,8 @@ start();
 // Gives life to search button
 $("#searchBtn").on("click", function (e) {
     event.preventDefault();
+    $("#bandsList").show();
+    $(".containerEdge").show();
     $("#songsList").empty();
     $("#bandsList").empty();
     $("#titleDiv").empty();
@@ -121,6 +123,8 @@ $(document).on("click", ".songId", function (e) {
 })
 // Gives mouse pointer in Deezer and BandsInTown containers
 function start() {
+    $("#bandsList").hide();
+    $(".containerEdge").hide();
     $("#pointer").focus();
     var searchCrit = $("select option:selected").text();
     console.log(searchCrit);
