@@ -102,9 +102,40 @@ $("#searchBtn").on("click", function (e) {
                     // Prepends song list created to Deezer song list container
                     $("#songsList").prepend(newLi);
                 }
-                console.log(response)
-            });
-        })
+                var bandsURL = "https://cors-anywhere.herokuapp.com/rest.bandsintown.com/artists/" + response.data[0].artist.name + "?app_id=codingbootcamp";
+                $.ajax({
+                    url: bandsURL,
+                    method: "GET"
+                }).then(function (response) {
+                    var albumeventText = $("<p>");
+                    var albumlinkText = $("<a>");
+                    var albumsocialLink = $("<a>");
+                    if (response.upcoming_event_count != null) {
+                        albumeventText.text("Number of upcoming events: " + response.upcoming_event_count);
+                        albumeventText.addClass("text-right")
+                        $("#bandsList").append(albumeventText)
+                        albumlinkText.text("Click here for event info");
+                        albumlinkText.attr("href", response.url);
+                        albumlinkText.addClass("text-right")
+                        $("#bandsList").append(albumlinkText);
+                    } else {
+                        albumeventText.text("No upcoming events scheduled")
+                    }
+                    if (response.facebook_page_url != null) {
+                        albumsocialLink.text(response.name + " Facebook");
+                        albumsocialLink.addClass("text-right");
+                        albumsocialLink.attr("href", response.facebook_page_url);
+                        $("#bandsList").append(albumsocialLink);
+        
+        
+                    }
+
+
+                    console.log(response);
+
+                })
+            })
+        });
     }
 });
 // Call to Deezer API to display song player on page
@@ -130,4 +161,3 @@ function start() {
         console.log("bye")
     }
 }
-
