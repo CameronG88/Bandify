@@ -106,7 +106,6 @@ a:hover {
     margin-bottom: -75px;
     position: fixed;
     bottom: 0;
-
 }
 
 #player {
@@ -150,4 +149,7 @@ h5 {
 .centerpic {
     margin: auto;
 }
-
+/* Creates pointer in song list */
+#pointer {
+    cursor: pointer;
+}

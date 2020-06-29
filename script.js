@@ -15,7 +15,7 @@ $("#searchBtn").on("click", function (e) {
     $("#bandsList").empty();
     $("#titleDiv").empty();
     var search = $("#searchInput").val();
-    console.log(search);
+
     var searchCrit = $("select option:selected").text();
     if (searchCrit == "Artist") {
         // Call to BandsInTown API for image of artist searched, displayed on page with css dynamically
@@ -63,12 +63,11 @@ $("#searchBtn").on("click", function (e) {
                 });
                 $("#bandsList").append(socialLink);
 
-
             }
         })
         // Call to Deezer API to display artists top 25 songs in Deezer container
         var deezerURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search?q=" + search + "&secret=575cd86916cf1a434b588d36676b3ef8";
-        console.log(deezerURL);
+
         $.ajax({
             url: deezerURL,
             method: "GET"
@@ -85,7 +84,7 @@ $("#searchBtn").on("click", function (e) {
         // begin search by album functions
     } else {
         var deezerURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search/album?q=" + search + "&secret=575cd86916cf1a434b588d36676b3ef8";
-        console.log(deezerURL);
+
         $.ajax({
             url: deezerURL,
             method: "GET"
@@ -124,8 +123,10 @@ $("#searchBtn").on("click", function (e) {
                         albumeventText.addClass("text-right")
                         $("#bandsList").append(albumeventText)
                         albumlinkText.text("Click here for event info");
-                        albumlinkText.attr({ href: response.url,
-                            target: "_blank"});
+                        albumlinkText.attr({
+                            href: response.url,
+                            target: "_blank"
+                        });
                         albumlinkText.addClass("text-right")
                         $("#bandsList").append(albumlinkText);
                     } else {
@@ -134,13 +135,13 @@ $("#searchBtn").on("click", function (e) {
                     if (response.facebook_page_url != null) {
                         albumsocialLink.text(response.name + " Facebook");
                         albumsocialLink.addClass("text-right");
-                        albumsocialLink.attr({href: response.facebook_page_url,
-                            target: "_blank"});
+                        albumsocialLink.attr({
+                            href: response.facebook_page_url,
+                            target: "_blank"
+                        });
                         $("#bandsList").append(albumsocialLink);
 
-
                     }
-
 
                     console.log(response);
 
@@ -152,13 +153,13 @@ $("#searchBtn").on("click", function (e) {
 // Call to Deezer API to display song player on page
 $(document).on("click", ".songId", function (e) {
     var id = $(this).data("songId");
-    console.log(id);
+
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/api.deezer.com/oembed?url=http://www.deezer.com/track/" + id,
         method: "GET"
     }).then(function (response) {
         $("#player").html(response.html);
-        console.log(response.html)
+
     })
 })
 // Gives mouse pointer in Deezer and BandsInTown containers
@@ -167,21 +168,15 @@ function start() {
     $(".containerEdge").hide();
     $("#pointer").focus();
     var searchCrit = $("select option:selected").text();
-    console.log(searchCrit);
-    if (searchCrit == "Album") {
-        console.log("hi");
-    } else {
-        console.log("bye")
-    }
 }
 // Execute a function when the user releases a key on the keyboard
-$(document).on("keyup", "#searchInput", function(event) {
+$(document).on("keyup", "#searchInput", function (event) {
 
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-   $("#searchBtn").click();
-  }
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        $("#searchBtn").click();
+    }
 });
