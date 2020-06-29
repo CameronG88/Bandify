@@ -74,7 +74,7 @@ $("#searchBtn").on("click", function (e) {
             method: "GET"
         }).then(function (response) {
             for (let index = 0; index < response.data.length; index++) {
-                var newLi = $("<li>").text(response.data[index].title);
+                var newLi = $("<li>").text("▶    " + response.data[index].title);
                 newLi.addClass("songId");
                 newLi.data("songId", response.data[index].id)
                 // Prepends song list created to Deezer song list container
@@ -105,7 +105,7 @@ $("#searchBtn").on("click", function (e) {
                 method: "GET"
             }).then(function (response) {
                 for (let index = 0; index < response.data.length; index++) {
-                    var newLi = $("<li>").text(response.data[index].title);
+                    var newLi = $("<li>").text("▶    " + response.data[index].title);
                     newLi.addClass("songId");
                     newLi.data("songId", response.data[index].id)
                     // Prepends song list created to Deezer song list container
