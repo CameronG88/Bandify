@@ -91,7 +91,7 @@ select:focus {
  /* Adds rounded border around all containers */
 .containerEdge {
     border-radius: 10px;
-    height: 364px;
+    height: 400px;
     margin-bottom: 18%;
 }
 /* Adds style to Deezer container */
@@ -154,3 +154,9 @@ h5 {
 #pointer {
     cursor: pointer;
 }
+
+.bandsBtn {
+    background-color: rgba(150, 6, 150, 0.85);
+    color: white;
+    font-size: large;
+    }

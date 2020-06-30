@@ -24,40 +24,34 @@ $("#searchBtn").on("click", function (e) {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
             // set function variables
-            var newImg = $("<img>");
             var newTitle = $("<h1>");
-            var eventText = $("<p>");
             var linkText = $("<a>");
             var socialLink = $("<a>");
+            var imageurl = response.image_url
             // Creates and appends image of artist searched to BandsInTown container
-            newImg.attr("src", response.image_url);
-            newImg.css({ "width": "200", "height": "200", "border-radius": "10px 10px 10px 10px", "float": "left" });
-            newImg.addClass("centerpic");
-            $("#bandsList").prepend(newImg);
+            $("#bandsList").css({ "background": "url(" + imageurl + ")", "background-size": "100% 100%" });
             // creates and appends artist Title
             newTitle.text(response.name);
             newTitle.addClass("artTitle");
             $("#titleDiv").append(newTitle);
             // creates and appends amount of artist upcoming events
-            if (response.upcoming_event_count != null) {
-                eventText.text("Number of upcoming events: " + response.upcoming_event_count);
-                eventText.addClass("text-right")
-                $("#bandsList").append(eventText)
-                linkText.text("Click here for event info");
-                linkText.attr({
-                    href: response.url,
-                    target: "_blank"
-                });
-                linkText.addClass("text-right")
-                $("#bandsList").append(linkText);
-            } else {
-                eventText.text("No upcoming events scheduled")
-            }
+
+            linkText.text("Upcoming Events: " + response.upcoming_event_count + " 📅 Event Info");
+            linkText.attr({
+                type: "button",
+                href: response.url,
+                target: "_blank"
+            });
+            linkText.addClass("text-right bandsBtn")
+            $("#bandsList").append(linkText);
+
             if (response.facebook_page_url != null) {
                 socialLink.text(response.name + " Facebook");
-                socialLink.addClass("text-right");
+                socialLink.addClass("text-right bandsBtn");
                 socialLink.attr({
+                    type: "button",
                     href: response.facebook_page_url,
                     target: "_blank"
                 });
@@ -76,7 +70,7 @@ $("#searchBtn").on("click", function (e) {
                 $.ajax({
                     url: "https://cors-anywhere.herokuapp.com/api.deezer.com/artist/" + artId + "/top?limit=25",
                     method: "GET"
-                }).then(function (response) {                    
+                }).then(function (response) {
 
                     for (let index = 0; index < response.data.length; index++) {
                         var newLi = $("<li>").text("▶    " + response.data[index].title);
@@ -90,72 +84,64 @@ $("#searchBtn").on("click", function (e) {
             })
         })
     } else {
-            var deezerURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search/album?q=" + search + "&secret=575cd86916cf1a434b588d36676b3ef8";
+        var deezerURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/search/album?q=" + search + "&secret=575cd86916cf1a434b588d36676b3ef8";
 
+        $.ajax({
+            url: deezerURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            var albumArtist = $("<h1>").text(response.data[0].title + " by: " + response.data[0].artist.name);
+            albumArtist.addClass("artTitle");
+            var albumImg = response.data[0].cover_big;
+            // albumImg.addClass("centerpic");
+            // albumImg.css({ "width": "200", "height": "200", "border-radius": "10px 10px 10px 10px", "float": "left" });
+            $("#bandsList").css({ "background": "url(" + albumImg + ")", "background-size": "100% 100%" });
+            $("#titleDiv").append(albumArtist);
+
+            var albumListURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/album/" + response.data[0].id + "/tracks"
             $.ajax({
-                url: deezerURL,
+                url: albumListURL,
                 method: "GET"
             }).then(function (response) {
-                console.log(response);
-                var albumArtist = $("<h1>").text(response.data[0].title + " by: " + response.data[0].artist.name);
-                albumArtist.addClass("artTitle");
-                var albumImg = $("<img>").attr("src", response.data[0].cover_medium);
-                albumImg.addClass("centerpic");
-                albumImg.css({ "width": "200", "height": "200", "border-radius": "10px 10px 10px 10px", "float": "left" });
-                $("#bandsList").prepend(albumImg);
-                $("#titleDiv").append(albumArtist);
-
-                var albumListURL = "https://cors-anywhere.herokuapp.com/api.deezer.com/album/" + response.data[0].id + "/tracks"
+                for (let index = 0; index < response.data.length; index++) {
+                    var newLi = $("<li>").text("▶    " + response.data[index].title);
+                    newLi.addClass("songId");
+                    newLi.data("songId", response.data[index].id)
+                    // Prepends song list created to Deezer song list container
+                    $("#songsList").prepend(newLi);
+                }
+                var bandsURL = "https://cors-anywhere.herokuapp.com/rest.bandsintown.com/artists/" + response.data[0].artist.name + "?app_id=codingbootcamp";
                 $.ajax({
-                    url: albumListURL,
+                    url: bandsURL,
                     method: "GET"
-                }).then(function (response) {
-                    for (let index = 0; index < response.data.length; index++) {
-                        var newLi = $("<li>").text("▶    " + response.data[index].title);
-                        newLi.addClass("songId");
-                        newLi.data("songId", response.data[index].id)
-                        // Prepends song list created to Deezer song list container
-                        $("#songsList").prepend(newLi);
+                }).then(function (response) {    
+                    var albumlinkText = $("<a>");
+                    var albumsocialLink = $("<a>");
+                        albumlinkText.text("Upcoming Events: " + response.upcoming_event_count + " 📅 Event Info");
+                        albumlinkText.attr({
+                            type: "button",
+                            href: response.url,
+                            target: "_blank"
+                        });
+                        albumlinkText.addClass("text-right bandsBtn")
+                        $("#bandsList").append(albumlinkText);
+                   
+                    if (response.facebook_page_url != null) {
+                        albumsocialLink.text(response.name + " Facebook");
+                        albumsocialLink.addClass("text-right bandsBtn");
+                        albumsocialLink.attr({
+                            type: "button",
+                            href: response.facebook_page_url,
+                            target: "_blank"
+                        });
+                        $("#bandsList").append(albumsocialLink);
                     }
-                    var bandsURL = "https://cors-anywhere.herokuapp.com/rest.bandsintown.com/artists/" + response.data[0].artist.name + "?app_id=codingbootcamp";
-                    $.ajax({
-                        url: bandsURL,
-                        method: "GET"
-                    }).then(function (response) {
-                        var albumeventText = $("<p>");
-                        var albumlinkText = $("<a>");
-                        var albumsocialLink = $("<a>");
-                        if (response.upcoming_event_count != null) {
-                            albumeventText.text("Number of upcoming events: " + response.upcoming_event_count);
-                            albumeventText.addClass("text-right")
-                            $("#bandsList").append(albumeventText)
-                            albumlinkText.text("Click here for event info");
-                            albumlinkText.attr({
-                                href: response.url,
-                                target: "_blank"
-                            });
-                            albumlinkText.addClass("text-right")
-                            $("#bandsList").append(albumlinkText);
-                        } else {
-                            albumeventText.text("No upcoming events scheduled")
-                        }
-                        if (response.facebook_page_url != null) {
-                            albumsocialLink.text(response.name + " Facebook");
-                            albumsocialLink.addClass("text-right");
-                            albumsocialLink.attr({
-                                href: response.facebook_page_url,
-                                target: "_blank"
-                            });
-                            $("#bandsList").append(albumsocialLink);
-
-                        }
-
-                        console.log(response);
-
-                    })
+                    console.log(response);
                 })
-            });
-        }
+            })
+        });
+    }
 });
 // Call to Deezer API to display song player on page
 $(document).on("click", ".songId", function (e) {
